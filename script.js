@@ -4,51 +4,51 @@ const questions = [
       options: ["13", "15", "16", "14"],
       answer: [1]
     },
-    {
-      question: "Qual o nome da princesa no universo de Zelda?",
-      options: ["Zelda", "Peach", "Samus", "Midna"],
-      answer: [0]
-    },
-    {
-      question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
-      options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
-      answer: [0]
-    },
-    {
-      question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
-      options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
-      answer: [0]
-    },
-    {
-      question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
-      options: [
-        "Trocar fraldas em 5 segundos",
-        "Mamadeiras teleguiadas",
-        "Fazer o bebê dormir com um olhar",
-        "Multitarefa com estilo"
-      ],
-      answer: [0, 1, 2, 3]
-    },
-    {
-      question: "O que um bom padrinho faz?",
-      options: [
-        "Dá presentes",
-        "Ensina lições",
-        "Está sempre por perto",
-        "Tudo isso e mais um pouco"
-      ],
-      answer: [3]
-    },
-    {
-      question: "Está pronto para aceitar essa missão épica e ser o padrinho da Malu?",
-      options: [
-        "SIM! Onde aperto Start?",
-        "Aceito antes mesmo do final",
-        "Já estou emocionado",
-        "Missão aceita, Link se rende à Malu!"
-      ],
-      answer: [0, 1, 2, 3]
-    }
+    // {
+    //   question: "Qual o nome da princesa no universo de Zelda?",
+    //   options: ["Zelda", "Peach", "Samus", "Midna"],
+    //   answer: [0]
+    // },
+    // {
+    //   question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
+    //   options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
+    //   answer: [0]
+    // },
+    // {
+    //   question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
+    //   options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
+    //   answer: [0]
+    // },
+    // {
+    //   question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
+    //   options: [
+    //     "Trocar fraldas em 5 segundos",
+    //     "Mamadeiras teleguiadas",
+    //     "Fazer o bebê dormir com um olhar",
+    //     "Multitarefa com estilo"
+    //   ],
+    //   answer: [0, 1, 2, 3]
+    // },
+    // {
+    //   question: "O que um bom padrinho faz?",
+    //   options: [
+    //     "Dá presentes",
+    //     "Ensina lições",
+    //     "Está sempre por perto",
+    //     "Tudo isso e mais um pouco"
+    //   ],
+    //   answer: [3]
+    // },
+    // {
+    //   question: "Está pronto para ver a sua recompensa?",
+    //   options: [
+    //     "SIM!",
+    //     "Aceito antes mesmo do final",
+    //     "Já estou emocionado",
+    //     "Talvez"
+    //   ],
+    //   answer: [0, 1, 2, 3]
+    // }
   ];
   
   let currentQuestion = 0;
@@ -80,13 +80,28 @@ const questions = [
     const volumeValue = document.querySelector('.volume-value');
     
     // Define o volume inicial
-    bgMusic.volume = volumeSlider.value / 100;
+    bgMusic.volume = 0.5;
+    volumeSlider.value = 50;
+    volumeValue.textContent = "50%";
     
     volumeSlider.addEventListener('input', (e) => {
       const volume = e.target.value;
       bgMusic.volume = volume / 100;
       volumeValue.textContent = `${volume}%`;
     });
+
+    const btnAccept = document.getElementById('btn-accept');
+    const btnRefuse = document.getElementById('btn-refuse');
+    if (btnAccept && btnRefuse) {
+      btnAccept.addEventListener('click', () => {
+        document.getElementById('final-screen').classList.add('hidden');
+        document.getElementById('accepted-screen').classList.remove('hidden');
+      });
+      btnRefuse.addEventListener('click', () => {
+        document.getElementById('final-screen').classList.add('hidden');
+        document.getElementById('refused-screen').classList.remove('hidden');
+      });
+    }
   });
   
   function toggleMusic() {

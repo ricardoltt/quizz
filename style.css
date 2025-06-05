@@ -519,3 +519,31 @@ audio {
 .hidden {
   display: none !important;
 }
+
+#accepted-screen .pixel-border,
+#refused-screen .pixel-border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#accepted-screen h1,
+#accepted-screen p,
+#refused-screen h1,
+#refused-screen p {
+  width: 100%;
+  text-align: center;
+}
+
+.padrinho-img {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  margin: 1.5rem auto 1rem auto;
+  display: block;
+  border: 4px solid var(--primary-color);
+  box-shadow: 4px 4px 0 var(--secondary-color), -4px -4px 0 var(--accent-color);
+  background: #111;
+}
