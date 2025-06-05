@@ -4,21 +4,21 @@ const questions = [
       options: ["13", "15", "16", "14"],
       answer: [1]
     },
-    {
-      question: "Qual o nome da princesa no universo de Zelda?",
-      options: ["Zelda", "Peach", "Samus", "Midna"],
-      answer: [0]
-    },
-    {
-      question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
-      options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
-      answer: [0]
-    },
-    {
-      question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
-      options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
-      answer: [0]
-    },
+    // {
+    //   question: "Qual o nome da princesa no universo de Zelda?",
+    //   options: ["Zelda", "Peach", "Samus", "Midna"],
+    //   answer: [0]
+    // },
+    // {
+    //   question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
+    //   options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
+    //   answer: [0]
+    // },
+    // {
+    //   question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
+    //   options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
+    //   answer: [0]
+    // },
     // {
     //   question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
     //   options: [
