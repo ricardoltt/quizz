@@ -30,7 +30,7 @@
     <section id="start-screen" class="screen">
       <div class="pixel-border">
         <h1>🧙‍♂️ Uma Jornada para Felipe, o Hobbit 🧙‍♂️</h1>
-        <p class="centered-text">Você foi convocado para uma aventura épica pela Terra-média. Aceita o chamado?</p>
+        <p class="intro-text">Você foi convocado para uma aventura épica pela Terra-média. Aceita o chamado?</p>
         <div class="pixel-menu">
           <button class="pixel-btn green" id="btn-play">Começar Jornada</button>
           <button class="pixel-btn yellow" id="btn-options">Configurações do Condado</button>
@@ -55,10 +55,12 @@
 
     <section id="game-over-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>💀 Fim da Jornada</h1>
+        <h1>💀 Fim da Jornada 💀</h1>
         <div class="game-over-content">
-          <p class="centered-text" id="game-over-main-msg">Felipe recusou a missão e a Sociedade perdeu um membro!</p>
-          <p class="centered-text">O Condado sentirá sua falta... 🍃</p>
+          <div class="gameover-msg">
+            <span class="gameover-main">💔 Felipe recusou a missão e a Sociedade perdeu um membro!</span>
+            <span class="gameover-sub">O Condado sentirá sua falta... 🍃</span>
+          </div>
           <div class="pixel-menu">
             <button class="pixel-btn green" onclick="location.reload()">Tentar Novamente</button>
             <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
@@ -75,12 +77,12 @@
     <section id="final-screen" class="screen hidden">
       <div class="pixel-border">
         <h1>🌟 Recompensa Épica 🌟</h1>
-        <div class="titulo-premio">Você recebeu o título de
-          <h2>🪄 Guardião da Malu 🪄</h2>
+        <div class="titulo-premio">Você recebeu o título
+          <h2>🪄 Padrinho da Malu 🪄</h2>
         </div>
         <div class="pixel-menu">
-          <button class="pixel-btn green" id="btn-accept">Aceitar Missão</button>
-          <button class="pixel-btn pink" id="btn-refuse">Recusar Missão</button>
+          <button class="pixel-btn green" id="btn-accept">Aceitar</button>
+          <button class="pixel-btn pink" id="btn-refuse">Recusar</button>
         </div>
       </div>
     </section>
@@ -88,23 +90,27 @@
     <section id="accepted-screen" class="screen hidden">
       <div class="pixel-border">
         <h1>🎉 Bem-vindo à Sociedade!</h1>
-        <p>Prepare-se para proteger, mimar e ensinar! Sua jornada como Guardião da Malu começa agora.</p>
+        <p>Prepare-se para proteger, mimar e ensinar! Sua jornada como Padrinho da Malu começa agora.</p>
         <p>Você acaba de desbloquear um título lendário na Terra-média da Malu!</p>
-        <p>Este é seu certificado simbólico de Guardião oficial:</p>
-        <div style="margin: 0; font-size: 2rem;">📜 <b>Guardião da Malu</b> 📜</div>
-        <img src="padrinho.png" alt="Guardião da Malu" class="padrinho-img">
+        <p>Este é seu certificado simbólico de Padrinho oficial:</p>
+        <div style="margin: 0; font-size: 2rem;">📜 <b>Padrinho da Malu</b> 📜</div>
+        <img src="padrinho.png" alt="Padrinho da Malu" class="padrinho-img">
         <button class="pixel-btn blue" onclick="location.reload()">Recomeçar Jornada</button>
       </div>
     </section>
 
     <section id="refused-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>😱 Missão Recusada!</h1>
-        <p>Felipe, você recusou a maior honra do Condado!</p>
-        <p>A Malu ficou triste, mas a Sociedade sempre terá um lugar para você...</p>
-        <div class="pixel-menu">
-          <button class="pixel-btn green" onclick="location.reload()">Tentar de Novo</button>
-          <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Fugir para Mordor</button>
+        <h1>💀 Missão Recusada 💀</h1>
+        <div class="game-over-content">
+          <div class="gameover-msg">
+            <span class="gameover-main">Felipe, você recusou a maior honra do Condado!</span>
+            <span class="gameover-sub">A Malu ficou triste, mas a Sociedade sempre terá um lugar para você...</span>
+          </div>
+          <div class="pixel-menu">
+            <button class="pixel-btn green" id="btn-accept">Aceitar</button>
+            <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
+          </div>
         </div>
       </div>
     </section>

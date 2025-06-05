@@ -213,11 +213,14 @@ const questions = [
   function showGameOver(reason = 'recusou') {
     document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("game-over-screen").classList.remove("hidden");
-    const msg = document.getElementById('game-over-main-msg');
+    const mainMsg = document.querySelector('.gameover-main');
+    const subMsg = document.querySelector('.gameover-sub');
     if (reason === 'falhou') {
-      msg.textContent = 'Felipe falhou em uma missão super importante!';
+      mainMsg.textContent = '💔 Felipe falhou em uma missão super importante!';
+      subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     } else {
-      msg.textContent = 'Felipe recusou uma missão super importante!';
+      mainMsg.textContent = '💔 Felipe recusou a missão e a Sociedade perdeu um membro!';
+      subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     }
   }
   
