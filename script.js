@@ -221,3 +221,26 @@ const questions = [
     }
   }
   
+  function resetQuiz() {
+    // Resetar variáveis
+    currentQuestion = 0;
+    lives = 3;
+    updateLives();
+
+    // Voltar para tela inicial
+    document.getElementById("start-screen").classList.remove("hidden");
+    document.getElementById("quiz-screen").classList.add("hidden");
+    document.getElementById("final-screen").classList.add("hidden");
+    document.getElementById("options-screen").classList.add("hidden");
+    document.getElementById("game-over-screen").classList.add("hidden");
+    document.getElementById("accepted-screen").classList.add("hidden");
+    document.getElementById("refused-screen").classList.add("hidden");
+
+    // Limpar perguntas e mensagens
+    const container = document.getElementById("question-container");
+    if (container) container.innerHTML = "";
+    const messageContainer = document.getElementById('message-container');
+    if (messageContainer) messageContainer.classList.add('hidden');
+  }
+  window.resetQuiz = resetQuiz;
+  

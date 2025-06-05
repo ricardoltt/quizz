@@ -52,7 +52,7 @@
           <p class="centered-text" id="game-over-main-msg">Felipe recusou uma missão super importante!</p>
           <p class="centered-text">Não vai descobrir qual era a recompensa 😢</p>
           <div class="pixel-menu">
-            <button class="pixel-btn green" onclick="location.reload()">Tentar Novamente</button>
+            <button class="pixel-btn green" onclick="resetQuiz()">Tentar Novamente</button>
             <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
           </div>
         </div>
@@ -87,7 +87,7 @@
         <p>Este é seu certificado simbólico de padrinho oficial:</p>
         <div style="margin: 0; font-size: 2rem;">📜 <b>Padrinho da Malu</b> 📜</div>
         <img src="padrinho.png" alt="Padrinho da Malu" class="padrinho-img">
-        <button class="pixel-btn blue" onclick="location.reload()">Jogar Novamente</button>
+        <button class="pixel-btn blue" onclick="resetQuiz()">Jogar Novamente</button>
       </div>
     </section>
 
@@ -97,7 +97,7 @@
         <p>Felipe, você recusou a maior honra do multiverso dos padrinhos!</p>
         <p>A Malu ficou triste, mas ainda há tempo de mudar de ideia...</p>
         <div class="pixel-menu">
-          <button class="pixel-btn green" onclick="location.reload()">Tentar de Novo</button>
+          <button class="pixel-btn green" id="btn-accept">Aceitar</button>
           <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
         </div>
       </div>
