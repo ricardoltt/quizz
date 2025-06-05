@@ -15,25 +15,33 @@
     🎵 Tocar Música
   </button>
 
+  <div class="avatar-lives-top">
+    <img src="felipe-hobbit.jpg" alt="Avatar de Felipe Hobbit" class="avatar-felipe">
+    <div class="hobbit-nome">Felipe Bolseiro</div>
+    <div class="lives-container">
+      <div class="lives">🧝‍♂️🧝‍♂️🧝‍♂️</div>
+    </div>
+  </div>
+
   <div id="app">
     <div class="scanlines"></div>
     <div class="noise"></div>
     
     <section id="start-screen" class="screen">
       <div class="pixel-border">
-        <h1>🎮 Nova Missão para Felipe 🎮</h1>
-        <p class="centered-text">Você foi convocado para uma jornada muito especial</p>
+        <h1>🧙‍♂️ Uma Jornada para Felipe, o Hobbit 🧙‍♂️</h1>
+        <p class="centered-text">Você foi convocado para uma aventura épica pela Terra-média. Aceita o chamado?</p>
         <div class="pixel-menu">
-          <button class="pixel-btn green" id="btn-play">JOGAR</button>
-          <button class="pixel-btn yellow" id="btn-options">OPÇÕES</button>
-          <button class="pixel-btn pink" id="btn-exit">SAIR</button>
+          <button class="pixel-btn green" id="btn-play">Começar Jornada</button>
+          <button class="pixel-btn yellow" id="btn-options">Configurações do Condado</button>
+          <button class="pixel-btn pink" id="btn-exit">Fugir para Valfenda</button>
         </div>
       </div>
     </section>
 
     <section id="options-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>⚙️ Opções</h1>
+        <h1>⚙️ Configurações do Condado</h1>
         <div class="options-menu">
           <div class="volume-control">
             <label for="volume-slider">Volume da Música</label>
@@ -47,10 +55,10 @@
 
     <section id="game-over-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>💔 GAME OVER</h1>
+        <h1>💀 Fim da Jornada</h1>
         <div class="game-over-content">
-          <p class="centered-text" id="game-over-main-msg">Felipe recusou uma missão super importante!</p>
-          <p class="centered-text">Não vai descobrir qual era a recompensa 😢</p>
+          <p class="centered-text" id="game-over-main-msg">Felipe recusou a missão e a Sociedade perdeu um membro!</p>
+          <p class="centered-text">O Condado sentirá sua falta... 🍃</p>
           <div class="pixel-menu">
             <button class="pixel-btn green" onclick="location.reload()">Tentar Novamente</button>
             <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
@@ -60,45 +68,43 @@
     </section>
 
     <section id="quiz-screen" class="screen hidden">
-      <div class="lives-container">
-        <div class="lives">♥ ♥ ♥</div>
-      </div>
       <div id="question-container"></div>
       <div id="message-container" class="message-container hidden"></div>
     </section>
 
     <section id="final-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>🏆 Recompensa Desbloqueada 🏆</h1>
-        <p>Você recebeu o título de</p>
-        <h2>🎖️ Padrinho da Malu 🎖️</h2>
+        <h1>🌟 Recompensa Épica 🌟</h1>
+        <div class="titulo-premio">Você recebeu o título de
+          <h2>🪄 Guardião da Malu 🪄</h2>
+        </div>
         <div class="pixel-menu">
-          <button class="pixel-btn green" id="btn-accept">Aceitar</button>
-          <button class="pixel-btn pink" id="btn-refuse">Recusar</button>
+          <button class="pixel-btn green" id="btn-accept">Aceitar Missão</button>
+          <button class="pixel-btn pink" id="btn-refuse">Recusar Missão</button>
         </div>
       </div>
     </section>
 
     <section id="accepted-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>🎉 Parabéns, Padrinho!</h1>
-        <p>Prepare-se para proteger, mimar e ensinar! Sua jornada como padrinho começa agora.</p>
-        <p>Você acaba de desbloquear um título muito importante do universo da Malu!</p>
-        <p>Este é seu certificado simbólico de padrinho oficial:</p>
-        <div style="margin: 0; font-size: 2rem;">📜 <b>Padrinho da Malu</b> 📜</div>
-        <img src="padrinho.png" alt="Padrinho da Malu" class="padrinho-img">
-        <button class="pixel-btn blue" onclick="location.reload()">Jogar Novamente</button>
+        <h1>🎉 Bem-vindo à Sociedade!</h1>
+        <p>Prepare-se para proteger, mimar e ensinar! Sua jornada como Guardião da Malu começa agora.</p>
+        <p>Você acaba de desbloquear um título lendário na Terra-média da Malu!</p>
+        <p>Este é seu certificado simbólico de Guardião oficial:</p>
+        <div style="margin: 0; font-size: 2rem;">📜 <b>Guardião da Malu</b> 📜</div>
+        <img src="padrinho.png" alt="Guardião da Malu" class="padrinho-img">
+        <button class="pixel-btn blue" onclick="location.reload()">Recomeçar Jornada</button>
       </div>
     </section>
 
     <section id="refused-screen" class="screen hidden">
       <div class="pixel-border">
-        <h1>😱 Recusou a Honra!</h1>
-        <p>Felipe, você recusou a maior honra do multiverso dos padrinhos!</p>
-        <p>A Malu ficou triste, mas ainda há tempo de mudar de ideia...</p>
+        <h1>😱 Missão Recusada!</h1>
+        <p>Felipe, você recusou a maior honra do Condado!</p>
+        <p>A Malu ficou triste, mas a Sociedade sempre terá um lugar para você...</p>
         <div class="pixel-menu">
           <button class="pixel-btn green" onclick="location.reload()">Tentar de Novo</button>
-          <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Desistir de Vez</button>
+          <button class="pixel-btn pink" onclick="window.location.href='https://pointerpointer.com/'">Fugir para Mordor</button>
         </div>
       </div>
     </section>
