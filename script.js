@@ -71,11 +71,14 @@ const questions = [
   // Inicialização quando a página carregar
   document.addEventListener('DOMContentLoaded', () => {
     // Garante que apenas a tela inicial esteja visível
-    document.getElementById("start-screen").classList.remove("hidden");
+    document.getElementById("welcome-screen").classList.remove("hidden");
+    document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("quiz-screen").classList.add("hidden");
     document.getElementById("final-screen").classList.add("hidden");
     document.getElementById("options-screen").classList.add("hidden");
     document.getElementById("game-over-screen").classList.add("hidden");
+    document.getElementById("accepted-screen").classList.add("hidden");
+    document.getElementById("refused-screen").classList.add("hidden");
 
     // Adiciona os event listeners aos botões
     document.getElementById('btn-play').addEventListener('click', startMission);
