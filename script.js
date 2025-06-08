@@ -66,6 +66,7 @@ const questions = [
   const musicToggle = document.getElementById('musicToggle');
   let isMusicPlaying = false;
   let lives = 3;
+  let playerName = '';
   
   // Inicialização quando a página carregar
   document.addEventListener('DOMContentLoaded', () => {
@@ -111,6 +112,42 @@ const questions = [
         document.getElementById('final-screen').classList.add('hidden');
         document.getElementById('refused-screen').classList.remove('hidden');
       });
+    }
+
+    const nameInput = document.getElementById('player-name');
+    const startJourneyBtn = document.getElementById('btn-start-journey');
+
+    // Focus the input when the page loads
+    nameInput.focus();
+
+    // Handle Enter key press
+    nameInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && nameInput.value.trim()) {
+        startJourney();
+      }
+    });
+
+    // Handle button click
+    startJourneyBtn.addEventListener('click', () => {
+      if (nameInput.value.trim()) {
+        startJourney();
+      }
+    });
+
+    function startJourney() {
+      playerName = nameInput.value.trim();
+      document.getElementById('welcome-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+      
+      // Show avatar and update name
+      const avatarTop = document.querySelector('.avatar-lives-top');
+      const hobbitNome = document.querySelector('.hobbit-nome');
+      avatarTop.classList.remove('hidden');
+      hobbitNome.textContent = `${playerName} Bolseiro`;
+      
+      // Update the title with the player's name
+      const title = document.querySelector('#start-screen h1');
+      title.textContent = `🧙‍♂️ Uma Jornada para ${playerName}, o Hobbit 🧙‍♂️`;
     }
   });
   
@@ -226,10 +263,10 @@ const questions = [
     const mainMsg = document.querySelector('.gameover-main');
     const subMsg = document.querySelector('.gameover-sub');
     if (reason === 'falhou') {
-      mainMsg.textContent = '💔 Felipe falhou em uma missão super importante!';
+      mainMsg.textContent = `💔 ${playerName} falhou em uma missão super importante!`;
       subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     } else {
-      mainMsg.textContent = '💔 Felipe recusou a missão e a Sociedade perdeu um membro!';
+      mainMsg.textContent = `💔 ${playerName} recusou a missão e a Sociedade perdeu um membro!`;
       subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     }
   }
