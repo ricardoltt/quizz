@@ -4,51 +4,61 @@ const questions = [
       options: ["13", "15", "16", "14"],
       answer: [1]
     },
-    // {
-    //   question: "Qual o nome da princesa no universo de Zelda?",
-    //   options: ["Zelda", "Peach", "Samus", "Midna"],
-    //   answer: [0]
-    // },
-    // {
-    //   question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
-    //   options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
-    //   answer: [0]
-    // },
-    // {
-    //   question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
-    //   options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
-    //   answer: [0]
-    // },
-    // {
-    //   question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
-    //   options: [
-    //     "Trocar fraldas em 5 segundos",
-    //     "Mamadeiras teleguiadas",
-    //     "Fazer o bebê dormir com um olhar",
-    //     "Multitarefa com estilo"
-    //   ],
-    //   answer: [0, 1, 2, 3]
-    // },
-    // {
-    //   question: "O que um bom padrinho faz?",
-    //   options: [
-    //     "Dá presentes",
-    //     "Ensina lições",
-    //     "Está sempre por perto",
-    //     "Tudo isso e mais um pouco"
-    //   ],
-    //   answer: [3]
-    // },
-    // {
-    //   question: "Está pronto para ver a sua recompensa?",
-    //   options: [
-    //     "SIM!",
-    //     "Aceito antes mesmo do final",
-    //     "Já estou emocionado",
-    //     "Talvez"
-    //   ],
-    //   answer: [0, 1, 2, 3]
-    // }
+    {
+      question: "“YOU SHALL NOT PASS!” — Com essa frase, Gandalf enfrentou qual criatura?",
+      options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
+      answer: [0]
+    },
+    {
+      question: "Qual o nome do hobbit que encontra o Um Anel em 'O Hobbit'?",
+      options: ["Frodo", "Bilbo", "Merry", "Pippin"],
+      answer: [1]
+    },
+    {
+      question: "Como se chama a região onde fica a vila dos hobbits?",
+      options: ["Mordor", "Rohan", "Valfenda", "Condado"],
+      answer: [3]
+    },
+    {
+      question: "Qual desses personagens não é um hobbit?",
+      options: ["Frodo", "Gimli", "Sam", "Merry"],
+      answer: [1]
+    },
+    {
+      question: "Qual desses hobbits é jardineiro e melhor amigo de Frodo?",
+      options: ["Pippin", "Bilbo", "Sam", "Gollum"],
+      answer: [2]
+    },
+    {
+      question: "Qual o nome da princesa no universo de Zelda?",
+      options: ["Zelda", "Peach", "Samus", "Midna"],
+      answer: [0]
+    },
+    {
+      question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
+      options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
+      answer: [0]
+    },
+    {
+      question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
+      options: [
+        "Trocar fraldas em 5 segundos",
+        "Mamadeiras teleguiadas",
+        "Fazer o bebê dormir com um olhar",
+        "Multitarefa com estilo"
+      ],
+      answer: [0, 1, 2, 3]
+    },
+    {
+      question: "Está pronto para ver a sua recompensa?",
+      options: [
+        "Sim!",
+        "Aceito antes mesmo de saber a recompensa.",
+        "Já estou emocionado",
+        "Talvez"
+      ],
+      answer: [0, 1, 2, 3]
+    }
   ];
   
   let currentQuestion = 0;
@@ -56,6 +66,7 @@ const questions = [
   const musicToggle = document.getElementById('musicToggle');
   let isMusicPlaying = false;
   let lives = 3;
+  let playerName = '';
   
   // Inicialização quando a página carregar
   document.addEventListener('DOMContentLoaded', () => {
@@ -101,6 +112,42 @@ const questions = [
         document.getElementById('final-screen').classList.add('hidden');
         document.getElementById('refused-screen').classList.remove('hidden');
       });
+    }
+
+    const nameInput = document.getElementById('player-name');
+    const startJourneyBtn = document.getElementById('btn-start-journey');
+
+    // Focus the input when the page loads
+    nameInput.focus();
+
+    // Handle Enter key press
+    nameInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && nameInput.value.trim()) {
+        startJourney();
+      }
+    });
+
+    // Handle button click
+    startJourneyBtn.addEventListener('click', () => {
+      if (nameInput.value.trim()) {
+        startJourney();
+      }
+    });
+
+    function startJourney() {
+      playerName = nameInput.value.trim();
+      document.getElementById('welcome-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+      
+      // Show avatar and update name
+      const avatarTop = document.querySelector('.avatar-lives-top');
+      const hobbitNome = document.querySelector('.hobbit-nome');
+      avatarTop.classList.remove('hidden');
+      hobbitNome.textContent = `${playerName} Bolseiro`;
+      
+      // Update the title with the player's name
+      const title = document.querySelector('#start-screen h1');
+      title.textContent = `🧙‍♂️ Uma Jornada para ${playerName}, o Hobbit 🧙‍♂️`;
     }
   });
   
@@ -150,7 +197,7 @@ const questions = [
 
   function updateLives() {
     const livesElement = document.querySelector('.lives');
-    livesElement.innerHTML = '♥ '.repeat(lives);
+    livesElement.innerHTML = '🧝‍♂️'.repeat(lives);
   }
 
   function loseLife() {
@@ -213,11 +260,14 @@ const questions = [
   function showGameOver(reason = 'recusou') {
     document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("game-over-screen").classList.remove("hidden");
-    const msg = document.getElementById('game-over-main-msg');
+    const mainMsg = document.querySelector('.gameover-main');
+    const subMsg = document.querySelector('.gameover-sub');
     if (reason === 'falhou') {
-      msg.textContent = 'Felipe falhou em uma missão super importante!';
+      mainMsg.textContent = `💔 ${playerName} falhou em uma missão super importante!`;
+      subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     } else {
-      msg.textContent = 'Felipe recusou uma missão super importante!';
+      mainMsg.textContent = `💔 ${playerName} recusou a missão e a Sociedade perdeu um membro!`;
+      subMsg.textContent = 'O Condado sentirá sua falta... 🍃';
     }
   }
   
