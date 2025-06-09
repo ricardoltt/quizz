@@ -9,46 +9,46 @@ const questions = [
       options: ["Balrog", "Nazgûl", "Dragão", "Uruk-hai"],
       answer: [0]
     },
-    // {
-    //   question: "Qual o nome do hobbit que encontra o Um Anel em 'O Hobbit'?",
-    //   options: ["Frodo", "Bilbo", "Merry", "Pippin"],
-    //   answer: [1]
-    // },
-    // {
-    //   question: "Como se chama a região onde fica a vila dos hobbits?",
-    //   options: ["Mordor", "Rohan", "Valfenda", "Condado"],
-    //   answer: [3]
-    // },
-    // {
-    //   question: "Qual desses personagens não é um hobbit?",
-    //   options: ["Frodo", "Gimli", "Sam", "Merry"],
-    //   answer: [1]
-    // },
-    // {
-    //   question: "Qual desses hobbits é jardineiro e melhor amigo de Frodo?",
-    //   options: ["Pippin", "Bilbo", "Sam", "Gollum"],
-    //   answer: [2]
-    // },
-    // {
-    //   question: "Qual o nome da princesa no universo de Zelda?",
-    //   options: ["Zelda", "Peach", "Samus", "Midna"],
-    //   answer: [0]
-    // },
-    // {
-    //   question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
-    //   options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
-    //   answer: [0]
-    // },
-    // {
-    //   question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
-    //   options: [
-    //     "Trocar fraldas em 5 segundos",
-    //     "Mamadeiras teleguiadas",
-    //     "Fazer o bebê dormir com um olhar",
-    //     "Multitarefa com estilo"
-    //   ],
-    //   answer: [0, 1, 2, 3]
-    // },
+    {
+      question: "Qual o nome do hobbit que encontra o Um Anel em 'O Hobbit'?",
+      options: ["Frodo", "Bilbo", "Merry", "Pippin"],
+      answer: [1]
+    },
+    {
+      question: "Como se chama a região onde fica a vila dos hobbits?",
+      options: ["Mordor", "Rohan", "Valfenda", "Condado"],
+      answer: [3]
+    },
+    {
+      question: "Qual desses personagens não é um hobbit?",
+      options: ["Frodo", "Gimli", "Sam", "Merry"],
+      answer: [1]
+    },
+    {
+      question: "Qual desses hobbits é jardineiro e melhor amigo de Frodo?",
+      options: ["Pippin", "Bilbo", "Sam", "Gollum"],
+      answer: [2]
+    },
+    {
+      question: "Qual o nome da princesa no universo de Zelda?",
+      options: ["Zelda", "Peach", "Samus", "Midna"],
+      answer: [0]
+    },
+    {
+      question: "Qual desses é um dos chefões mais temidos de Elden Ring?",
+      options: ["Malenia, Lâmina de Miquella", "Margit, o Impiedoso", "Radagon, o Bibliotecário", "Blaidd, o Caçador"],
+      answer: [0]
+    },
+    {
+      question: "Se você fosse um herói de videogame, e sua missão fosse cuidar de um bebê, qual superpoder você escolheria?",
+      options: [
+        "Trocar fraldas em 5 segundos",
+        "Mamadeiras teleguiadas",
+        "Fazer o bebê dormir com um olhar",
+        "Multitarefa com estilo"
+      ],
+      answer: [0, 1, 2, 3]
+    },
     {
       question: "Está pronto para ver a sua recompensa?",
       options: [
